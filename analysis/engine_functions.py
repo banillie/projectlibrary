@@ -15,7 +15,6 @@ from openpyxl.formatting import Rule
 import difflib
 from docx.shared import RGBColor
 
-
 '''dates for functions. python date format is Year, Month, day'''
 bicc_date = datetime.date(2020, 5, 4)
 milestone_analysis_date = datetime.date(2019, 11, 1)
