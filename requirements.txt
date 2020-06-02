@@ -1,2 +1,2 @@
--e git+https://github.com/hammerheadlemon/datamaps#egg=datamaps
+datamaps
 
