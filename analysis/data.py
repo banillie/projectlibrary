@@ -101,11 +101,15 @@ baseline_1_cost_profiles = get_project_cost_profile(list_of_masters_all[0].proje
 baseline_2_cost_profiles = get_project_cost_profile(list_of_masters_all[0].projects, financial_analysis_masters_list,
                                                         cost_list, year_list, fin_bc_index, 3)
 
-
-financial_narrative_keys = ['Project Costs Narrative',   # financial_dca_dashboard
+# for financial dca dashboard
+financial_narrative_keys = ['Project Costs Narrative',
                  'Cost comparison with last quarters cost narrative',
                  'Cost comparison within this quarters cost narrative']
 
+# for project summary pages
+SRO_conf_table_list = ['SRO DCA', 'Finance DCA', 'Benefits DCA', 'Resourcing DCA', 'Schedule DCA']
+SRO_conf_key_list = ['Departmental DCA', 'SRO Finance confidence', 'SRO Benefits RAG', 'Overall Resource DCA - Now',
+                     'SRO Schedule Confidence']
 
 '''specific project names. Useful to have them captured here so don't have to keep cutting and pasting string 
 name from excel master'''
@@ -264,7 +268,7 @@ vfm_list_two = ['Departmental DCA',
                      'Benefits Narrative',
                      'Ben comparison with last quarters cost - narrative']
 
-ipa_ar_fields_1920 =  ['Department',
+ipa_ar_fields_1920 = ['Department',
                        '19-20 RDEL BL Total',
                        '19-20 CDEL BL WLC',
                        '19-20 RDEL Forecast Total',
