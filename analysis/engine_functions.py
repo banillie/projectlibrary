@@ -88,21 +88,19 @@ def project_time_difference(proj_m_data_1, proj_m_data_2):
     for proj_name in proj_m_data_1:
         td_dict = {}
         for milestone in proj_m_data_1[proj_name]:
-            if milestone is not None:
-                milestone_date = tuple(proj_m_data_1[proj_name][milestone])[0]
+            milestone_date = tuple(proj_m_data_1[proj_name][milestone])[0]
+            if milestone_date is None:
+                td_dict[milestone] = 'No date'
+            else:
                 try:
-                    if milestone_analysis_date <= milestone_date:
-                        try:
-                            old_milestone_date = tuple(proj_m_data_2[proj_name][milestone])[0]
-                            time_delta = (milestone_date - old_milestone_date).days  # time_delta calculated here
-                            if time_delta == 0:
-                                td_dict[milestone] = 0
-                            else:
-                                td_dict[milestone] = time_delta
-                        except (KeyError, TypeError):
-                            td_dict[milestone] = 'Not reported' # not reported that quarter
+                    old_milestone_date = tuple(proj_m_data_2[proj_name][milestone])[0]
+                    time_delta = (milestone_date - old_milestone_date).days  # time_delta calculated here
+                    if time_delta == 0:
+                        td_dict[milestone] = 0
+                    else:
+                        td_dict[milestone] = time_delta
                 except (KeyError, TypeError):
-                    td_dict[milestone] = 'No date provided' # date has now been removed
+                    td_dict[milestone] = 'Not reported' # not reported that quarter
 
         upper_dictionary[proj_name] = td_dict
 
@@ -1037,5 +1035,32 @@ def assurance_milestone_data_bulk(project_list, master_data):
             upper_dictionary[name] = lower_dictionary
         except KeyError:
             upper_dictionary[name] = {}
+
+    return upper_dictionary
+
+def project_time_difference_old(proj_m_data_1, proj_m_data_2):
+    """Function that calculates time different between milestone dates"""
+    upper_dictionary = {}
+
+    for proj_name in proj_m_data_1:
+        td_dict = {}
+        for milestone in proj_m_data_1[proj_name]:
+            if milestone is not None:
+                milestone_date = tuple(proj_m_data_1[proj_name][milestone])[0]
+                try:
+                    if milestone_analysis_date <= milestone_date:
+                        try:
+                            old_milestone_date = tuple(proj_m_data_2[proj_name][milestone])[0]
+                            time_delta = (milestone_date - old_milestone_date).days  # time_delta calculated here
+                            if time_delta == 0:
+                                td_dict[milestone] = 0
+                            else:
+                                td_dict[milestone] = time_delta
+                        except (KeyError, TypeError):
+                            td_dict[milestone] = 'Not reported' # not reported that quarter
+                except (KeyError, TypeError):
+                    td_dict[milestone] = 'No date provided' # date has now been removed
+
+        upper_dictionary[proj_name] = td_dict
 
     return upper_dictionary
