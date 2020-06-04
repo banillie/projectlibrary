@@ -2,7 +2,7 @@
 
 from datamaps.api import project_data_from_master
 from analysis.engine_functions import baseline_information_bc, baseline_index, get_project_income_profile, \
-    get_project_cost_profile, get_all_project_names, baseline_information
+    get_project_cost_profile, get_all_project_names, baseline_information, all_milestones_dict, project_time_difference,
 from openpyxl.styles import Font, PatternFill
 import platform, datetime
 from pathlib import Path
@@ -100,6 +100,14 @@ baseline_1_cost_profiles = get_project_cost_profile(list_of_masters_all[0].proje
                                                         cost_list, year_list, fin_bc_index, 2)
 baseline_2_cost_profiles = get_project_cost_profile(list_of_masters_all[0].projects, financial_analysis_masters_list,
                                                         cost_list, year_list, fin_bc_index, 3)
+
+#milestone information
+'''get all milestone data'''
+p_current_milestones = all_milestones_dict(list_of_masters_all[0].projects, list_of_masters_all[0])
+p_last_milestones = all_milestones_dict(list_of_masters_all[1].projects, list_of_masters_all[1])
+
+'''calculate time current and last quarter'''
+first_diff_data = project_time_difference(p_current_milestones, p_last_milestones)
 
 # for financial dca dashboard
 financial_narrative_keys = ['Project Costs Narrative',
