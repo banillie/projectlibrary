@@ -2,7 +2,7 @@
 
 from datamaps.api import project_data_from_master
 from analysis.engine_functions import baseline_information_bc, baseline_index, get_project_income_profile, \
-    get_project_cost_profile, get_all_project_names, baseline_information, all_milestones_dict, project_time_difference,
+    get_project_cost_profile, get_all_project_names, baseline_information, all_milestones_dict, project_time_difference
 from openpyxl.styles import Font, PatternFill
 import platform, datetime
 from pathlib import Path
