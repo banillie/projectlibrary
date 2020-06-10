@@ -60,7 +60,7 @@ financial_analysis_masters_list = list_of_masters_all[0:8]
 all_project_names = get_all_project_names(list_of_masters_all)
 
 '''dates for functions. python date format is Year, Month, day'''
-bicc_date = datetime.date(2020, 4, 5)
+ipdc_date = datetime.date(2020, 8, 17)
 milestone_analysis_date = datetime.date(2020, 1, 1)
 
 '''baselining information'''
