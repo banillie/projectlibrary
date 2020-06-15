@@ -73,7 +73,8 @@ def all_milestones_dict(project_names, master_data):
             if i[1] > 1:
                 duplicates.append(i[0])
         if len(duplicates) is 0:
-            print('Check' + str(name) + ' milestone keys for these duplicates ' + duplicates)
+            print('Check' + str(name) + ' milestone keys for these duplicates ')
+            print(duplicates)
 
         #put the list in chronological order
         sorted_list = sorted(raw_list, key=lambda k: (k[1] is None, k[1]))
