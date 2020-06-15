@@ -68,10 +68,13 @@ def all_milestones_dict(project_names, master_data):
 
         # check for duplicate milestone key names.
         duplicates = []
+        dont_include = ['None', 'other key approvals', 'Other key milestones', 'other approval point',
+                        'other project milestone']
         count = Counter(elem[0] for elem in raw_list)
         for i in count.items():
             if i[1] > 1:
-                duplicates.append(i[0])
+                if i[0] not in dont_include:
+                    duplicates.append(i[0])
         if len(duplicates) is not 0:
             print('Check ' + str(name) + ' milestone keys for these duplicates ')
             print(duplicates)
