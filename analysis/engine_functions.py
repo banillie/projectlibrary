@@ -9,15 +9,12 @@ NOTE. Python date format is (YYYY,MM,DD)
 
 import random
 import datetime
+from collections import Counter
 from openpyxl.styles import Font, PatternFill
 from openpyxl.styles.differential import DifferentialStyle
 from openpyxl.formatting import Rule
 import difflib
 from docx.shared import RGBColor
-
-'''dates for functions. python date format is Year, Month, day'''
-bicc_date = datetime.date(2020, 5, 4)
-milestone_analysis_date = datetime.date(2019, 11, 1)
 
 def all_milestones_dict(project_names, master_data):
     '''
@@ -69,6 +66,16 @@ def all_milestones_dict(project_names, master_data):
         except KeyError:
             pass
 
+        # check for duplicate milestone key names.
+        duplicates = []
+        count = Counter(elem[0] for elem in raw_list)
+        for i in count.items():
+            if i[1] > 1:
+                duplicates.append(i[0])
+        if len(duplicates) is 0:
+            print('Check' + str(name) + ' milestone keys for these duplicates ' + duplicates)
+
+        #put the list in chronological order
         sorted_list = sorted(raw_list, key=lambda k: (k[1] is None, k[1]))
 
         for x in sorted_list:
