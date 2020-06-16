@@ -105,7 +105,7 @@ def duplicate_milestone_keys(project_names, milestone_data):
 
         output_dict[name] = count
 
-    return upper_dict
+    return output_dict
 
 def project_time_difference(proj_m_data_1, proj_m_data_2):
     """Function that calculates time different between milestone dates"""
