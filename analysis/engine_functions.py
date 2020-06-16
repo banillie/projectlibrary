@@ -69,21 +69,22 @@ def all_milestones_dict(project_names, master_data):
         #put the list in chronological order
         sorted_list = sorted(raw_list, key=lambda k: (k[1] is None, k[1]))
 
-        # loop to stop key names being the same. Hack as doesn't handle string names included numbers. but
-        # useful never the less
-        extra = 1
+        # loop to stop key names being the same. Not ideal as doesn't handle keys that may already have numbers as
+        # strings at end of names. But still useful
         for x in sorted_list:
             if x[0] is not None:
                 if x[0] in lower_dict:
-                    key_name = x[0] + ' ' + str(extra)
-                    extra += 1
-                    lower_dict[key_name] = {x[1]: x[2]}
+                    for i in range(1, 10):
+                        key_name = x[0] + ' ' + str(i)
+                        if key_name in lower_dict:
+                            continue
+                        else:
+                            lower_dict[key_name] = {x[1]: x[2]}
+                            break
                 else:
                     lower_dict[x[0]] = {x[1]: x[2]}
             else:
                 pass
-
-        upper_dict[name] = lower_dict
 
     return upper_dict
 
