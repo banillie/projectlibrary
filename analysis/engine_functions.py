@@ -70,7 +70,7 @@ def all_milestones_dict(project_names, master_data):
         sorted_list = sorted(raw_list, key=lambda k: (k[1] is None, k[1]))
 
         # loop to stop key names being the same. Not ideal as doesn't handle keys that may already have numbers as
-        # strings at end of names. But still useful
+        # strings at end of names. But still useful.
         for x in sorted_list:
             if x[0] is not None:
                 if x[0] in lower_dict:
@@ -85,6 +85,8 @@ def all_milestones_dict(project_names, master_data):
                     lower_dict[x[0]] = {x[1]: x[2]}
             else:
                 pass
+
+        upper_dict[name] = lower_dict
 
     return upper_dict
 
