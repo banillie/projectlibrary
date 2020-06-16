@@ -74,7 +74,7 @@ def all_milestones_dict(project_names, master_data):
         for x in sorted_list:
             if x[0] is not None:
                 if x[0] in lower_dict:
-                    for i in range(1, 10):
+                    for i in range(2, 15):
                         key_name = x[0] + ' ' + str(i)
                         if key_name in lower_dict:
                             continue
