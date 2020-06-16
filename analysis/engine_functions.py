@@ -66,19 +66,6 @@ def all_milestones_dict(project_names, master_data):
         except KeyError:
             pass
 
-        # check for duplicate milestone key names.
-        duplicates = []
-        dont_include = [None, 'other key approvals', 'Other key milestones', 'other approval point',
-                        'other project milestone']
-        count = Counter(elem[0] for elem in raw_list)
-        for i in count.items():
-            if i[1] > 1:
-                if i[0] not in dont_include:
-                    duplicates.append(i[0])
-        if len(duplicates) is not 0:
-            print('Check ' + str(name) + ' milestone keys for these duplicates ')
-            print(duplicates)
-
         #put the list in chronological order
         sorted_list = sorted(raw_list, key=lambda k: (k[1] is None, k[1]))
 
@@ -89,6 +76,34 @@ def all_milestones_dict(project_names, master_data):
                 pass
 
         upper_dict[name] = lower_dict
+
+    return upper_dict
+
+def duplicate_milestone_keys(project_names, milestone_data):
+    '''
+    Function that checks if there are duplicate milestone keys for projects
+
+    Project_names: list of project names of interest / in range
+    Master_data: quarter master data set
+
+    Dictionary is structured as {'project name': ['list of duplicates']}
+
+    '''
+
+    output_dict = {}
+
+    for name in milestone_data.keys():
+        m_name_list = list(milestone_data[name].keys())
+        duplicates = []
+        dont_include = [None, 'other key approvals', 'Other key milestones', 'other approval point',
+                        'other project milestone']
+        count = Counter(elem[0] for elem in m_name_list)
+        for i in count.items():
+            if i[1] > 1:
+                if i[0] not in dont_include:
+                    duplicates.append(i[0])
+
+        output_dict[name] = count
 
     return upper_dict
 
