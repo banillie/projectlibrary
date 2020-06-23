@@ -62,6 +62,88 @@ all_project_names = get_all_project_names(list_of_masters_all)
 '''dates for functions. python date format is Year, Month, day'''
 ipdc_date = datetime.date(2020, 8, 17)
 
+abbreviations = {'2nd Generation UK Search and Rescue Aviation': 'SARH2',
+                 'A12 Chelmsford to A120 widening': 'A12',
+                 'A14 Cambridge to Huntingdon Improvement Scheme': 'A14',
+                 'A303 Amesbury to Berwick Down': 'A303',
+                 'A358 Taunton to Southfields Dualling': 'A358',
+                 'A417 Air Balloon': 'A417',
+                 'A428 Black Cat to Caxton Gibbet': 'A428',
+                 'A66 Full Scheme': 'A66',
+                 'Crossrail Programme': 'Crossrail',
+                 'East Coast Digital Programme': 'ECDP',
+                 'East Coast Mainline Programme': 'ECMP',
+                 'East West Rail Programme (Central Section)': 'EWR (Central)',
+                 'East West Rail Programme (Western Section)': 'EWR (Western',
+                 'Future Theory Test Service (FTTS)': 'FTTS',
+                 'Great Western Route Modernisation (GWRM) including electrification': 'GWRM',
+                 'Heathrow Expansion': 'HEP',
+                 'Hexagon': 'Hexagon',
+                 'High Speed Rail Programme (HS2)': 'HS2 Prog',
+                 'HS2 Phase 2b': 'HS2 2b',
+                 'HS2 Phase1': 'HS2 1',
+                 'HS2 Phase2a':'HS2 2a',
+                 'Integrated and Smart Ticketing - creating an account based back office': 'IST',
+                 'Intercity Express Programme': 'IEP',
+                 'Lower Thames Crossing': 'LTC',
+                 'M4 Junctions 3 to 12 Smart Motorway': 'M4',
+                 'Manchester North West Quadrant': 'MNWQ',
+                 'Midland Main Line Programme': 'MML Prog',
+                 'Midlands Rail Hub': 'Mid Rail Hub',
+                 'North Western Electrification': 'NWE',
+                 'Northern Powerhouse Rail': 'NPR',
+                 'Oxford-Cambridge Expressway': 'Ox-Cam Expressway',
+                 'Rail Franchising Programme': 'Rail Franchising',
+                 'South West Route Capacity': 'SWRC',
+                 'Thameslink Programme': 'Thameslink',
+                 'Transpennine Route Upgrade (TRU)': 'TRU',
+                 'Western Rail Link to Heathrow': 'WRlTH'}
+
+'''specific project names. Useful to have them captured here so don't have to keep cutting and pasting string 
+name from excel master'''
+a12 = 'A12 Chelmsford to A120 widening'
+a14 = 'A14 Cambridge to Huntingdon Improvement Scheme'
+a303 = 'A303 Amesbury to Berwick Down'
+a417 = 'A417 Air Balloon'
+a428 = 'A428 Black Cat to Caxton Gibbet'
+a66 = 'A66 Full Scheme'
+cvs = 'Commercial Vehicle Services (CVS)'
+east_coast_digital = 'East Coast Digital Programme'
+east_coast_mainline = 'East Coast Mainline Programme'
+em_franchise = 'East Midlands Franchise'
+ewr_central = 'East West Rail Programme (Central Section)'
+ewr_western = 'East West Rail Programme (Western Section)'
+ftts = 'Future Theory Test Service (FTTS)'
+heathrow_expansion = 'Heathrow Expansion'
+hexagon = 'Hexagon'
+hs2_programme = 'High Speed Rail Programme (HS2)'
+hs2_2b = 'HS2 Phase 2b'
+hs2_1 = 'HS2 Phase1'
+hs2_2a = 'HS2 Phase2a'
+ist = 'Integrated and Smart Ticketing - creating an account based back office'
+lower_thames_crossing = 'Lower Thames Crossing'
+m4 = 'M4 Junctions 3 to 12 Smart Motorway'
+manchester_north_west_quad = 'Manchester North West Quadrant'
+midland_mainline = 'Midland Main Line Programme'
+midlands_rail_hub = 'Midlands Rail Hub'
+north_of_england = 'North of England Programme'
+northern_powerhouse = 'Northern Powerhouse Rail'
+north_we = 'Midlands Rail Hub'
+ox_cam_expressway = 'Oxford-Cambridge Expressway'
+rail_franchising = 'Rail Franchising Programme'
+west_coast_partnership = 'West Coast Partnership Franchise'
+crossrail = 'Crossrail Programme'
+gwrm = 'Great Western Route Modernisation (GWRM) including electrification'
+iep = 'Intercity Express Programme'
+sarh2 = '2nd Generation UK Search and Rescue Aviation'
+south_west_route_capacity = 'South West Route Capacity'
+thameslink = 'Thameslink Programme'
+tru = 'Transpennine Route Upgrade (TRU)'
+wrlth = 'Western Rail Link to Heathrow'
+
+'''project groups'''
+hsmrpg = [hs2_1, hs2_2a, hs2_2b, hexagon, northern_powerhouse, ewr_western, ewr_central]
+
 '''baselining information'''
 # general baseline information
 baseline_bc_stamp = baseline_information_bc(all_project_names, list_of_masters_all)
@@ -118,54 +200,9 @@ SRO_conf_table_list = ['SRO DCA', 'Finance DCA', 'Benefits DCA', 'Resourcing DCA
 SRO_conf_key_list = ['Departmental DCA', 'SRO Finance confidence', 'SRO Benefits RAG', 'Overall Resource DCA - Now',
                      'SRO Schedule Confidence']
 
-'''specific project names. Useful to have them captured here so don't have to keep cutting and pasting string 
-name from excel master'''
-a12 = 'A12 Chelmsford to A120 widening'
-a14 = 'A14 Cambridge to Huntingdon Improvement Scheme'
-a303 = 'A303 Amesbury to Berwick Down'
-a417 = 'A417 Air Balloon'
-a428 = 'A428 Black Cat to Caxton Gibbet'
-a66 = 'A66 Full Scheme'
-cvs = 'Commercial Vehicle Services (CVS)'
-east_coast_digital = 'East Coast Digital Programme'
-east_coast_mainline = 'East Coast Mainline Programme'
-em_franchise = 'East Midlands Franchise'
-ewr_central = 'East West Rail Programme (Central Section)'
-ewr_western = 'East West Rail Programme (Western Section)'
-ftts = 'Future Theory Test Service (FTTS)'
-heathrow_expansion = 'Heathrow Expansion'
-hexagon = 'Hexagon'
-hs2_programme = 'High Speed Rail Programme (HS2)'
-hs2_2b = 'HS2 Phase 2b'
-hs2_1 = 'HS2 Phase1'
-hs2_2a = 'HS2 Phase2a'
-ist = 'Integrated and Smart Ticketing - creating an account based back office'
-lower_thames_crossing = 'Lower Thames Crossing'
-m4 = 'M4 Junctions 3 to 12 Smart Motorway'
-manchester_north_west_quad = 'Manchester North West Quadrant'
-midland_mainline = 'Midland Main Line Programme'
-midlands_rail_hub = 'Midlands Rail Hub'
-north_of_england = 'North of England Programme'
-northern_powerhouse = 'Northern Powerhouse Rail'
-north_we = 'Midlands Rail Hub'
-ox_cam_expressway = 'Oxford-Cambridge Expressway'
-rail_franchising = 'Rail Franchising Programme'
-west_coast_partnership = 'West Coast Partnership Franchise'
-crossrail = 'Crossrail Programme'
-gwrm = 'Great Western Route Modernisation (GWRM) including electrification'
-iep = 'Intercity Express Programme'
-sarh2 = '2nd Generation UK Search and Rescue Aviation'
-south_west_route_capacity = 'South West Route Capacity'
-thameslink = 'Thameslink Programme'
-tru = 'Transpennine Route Upgrade (TRU)'
-wrlth = 'Western Rail Link to Heathrow'
-
-'''project groups'''
-
-hsmrpg = [hs2_1, hs2_2a, hs2_2b, hexagon, northern_powerhouse, ewr_western, ewr_central]
-
 '''list of projects to exclude from counting of totals in portfolio financial profile'''
 dont_double_count = [hs2_programme, northern_powerhouse, east_coast_digital, heathrow_expansion]
+
 
 '''Store of different colours'''
 ag_text = Font(color="00a5b700") # text same colour as background
