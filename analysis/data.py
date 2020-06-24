@@ -2,7 +2,8 @@
 
 from datamaps.api import project_data_from_master
 from analysis.engine_functions import baseline_information_bc, baseline_index, get_project_income_profile, \
-    get_project_cost_profile, get_all_project_names, baseline_information, all_milestones_dict, project_time_difference
+    get_project_cost_profile, get_all_project_names, baseline_information, project_all_milestones_dict, \
+    project_time_difference
 from openpyxl.styles import Font, PatternFill
 import platform, datetime
 from pathlib import Path
@@ -184,13 +185,13 @@ baseline_2_cost_profiles = get_project_cost_profile(list_of_masters_all[0].proje
 
 #milestone information
 '''get all milestone data'''
-p_current_milestones = all_milestones_dict(list_of_masters_all[0].projects,
+p_current_milestones = project_all_milestones_dict(list_of_masters_all[0].projects,
                                            list_of_masters_all,
                                            bc_index, 0)
-p_last_milestones = all_milestones_dict(list_of_masters_all[0].projects,
+p_last_milestones = project_all_milestones_dict(list_of_masters_all[0].projects,
                                         list_of_masters_all,
                                         bc_index, 1)
-p_baseline_milestones = all_milestones_dict(list_of_masters_all[0].projects,
+p_baseline_milestones = project_all_milestones_dict(list_of_masters_all[0].projects,
                                         list_of_masters_all,
                                         bc_index, 2)
 
