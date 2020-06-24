@@ -195,8 +195,8 @@ baseline_2_cost_profiles = get_project_cost_profile(list_of_masters_all[0].proje
 #                                         list_of_masters_all,
 #                                         bc_index, 2)
 
-'''calculate time current and last quarter'''
-first_diff_data = project_time_difference(p_current_milestones, p_last_milestones)
+# '''calculate time current and last quarter'''
+# first_diff_data = project_time_difference(p_current_milestones, p_last_milestones)
 
 # for financial dca dashboard
 financial_narrative_keys = ['Project Costs Narrative',
