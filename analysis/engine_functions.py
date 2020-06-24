@@ -67,7 +67,7 @@ def project_all_milestones_dict(project_names,
                     raw_list.append(t)
                 except KeyError:
                     pass
-        except KeyError:
+        except (KeyError, TypeError):
             pass
 
         #put the list in chronological order
