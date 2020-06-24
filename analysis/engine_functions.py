@@ -35,9 +35,9 @@ def project_all_milestones_dict(project_names,
 
     for name in project_names:
         lower_dict = {}
+        raw_list = []
         try:
             p_data = master_data[baseline_index[name][data_to_return]].data[name]
-            raw_list = []
             for i in range(1, 50):
                 try:
                     try:
