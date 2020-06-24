@@ -16,7 +16,11 @@ from openpyxl.formatting import Rule
 import difflib
 from docx.shared import RGBColor
 
-def all_milestones_dict(project_names, master_data):
+def project_all_milestones_dict(project_names,
+                                master_data,
+                                baseline_index,
+                                data_to_return=int):
+
     '''
     Function that puts project milestone data in dictionary in order of newest date first.
 
@@ -32,7 +36,7 @@ def all_milestones_dict(project_names, master_data):
     for name in project_names:
         lower_dict = {}
         try:
-            p_data = master_data.data[name]
+            p_data = master_data[baseline_index[name][data_to_return]].data[name]
             raw_list = []
             for i in range(1, 50):
                 try:

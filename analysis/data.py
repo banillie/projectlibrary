@@ -184,8 +184,15 @@ baseline_2_cost_profiles = get_project_cost_profile(list_of_masters_all[0].proje
 
 #milestone information
 '''get all milestone data'''
-p_current_milestones = all_milestones_dict(list_of_masters_all[0].projects, list_of_masters_all[0])
-p_last_milestones = all_milestones_dict(list_of_masters_all[1].projects, list_of_masters_all[1])
+p_current_milestones = all_milestones_dict(list_of_masters_all[0].projects,
+                                           list_of_masters_all,
+                                           bc_index, 0)
+p_last_milestones = all_milestones_dict(list_of_masters_all[0].projects,
+                                        list_of_masters_all,
+                                        bc_index, 1)
+p_baseline_milestones = all_milestones_dict(list_of_masters_all[0].projects,
+                                        list_of_masters_all,
+                                        bc_index, 2)
 
 '''calculate time current and last quarter'''
 first_diff_data = project_time_difference(p_current_milestones, p_last_milestones)
