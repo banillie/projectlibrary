@@ -344,6 +344,35 @@ milestones = ['Start of Project',
 rags = ['SRO Benefits RAG',
         'GMPP - IPA DCA']
 
-costs = ['Total Forecast']
-
 baselines = ['IPDC approval point']
+
+ben_change_key_list = ['Pre-profile BEN Total',
+                           'Total BEN Forecast - Total Monetised Benefits',
+                           'Unprofiled Remainder BEN Forecast - Total Monetised Benefits']
+
+ben_type_key_list = ['Pre-profile BEN Forecast Gov Cashable',
+                  'Pre-profile BEN Forecast Gov Non-Cashable',
+                  'Pre-profile BEN Forecast - Economic (inc Private Partner)',
+                  'Pre-profile BEN Forecast - Disbenefit UK Economic',
+                  'Unprofiled Remainder BEN Forecast - Gov. Cashable',
+                  'Unprofiled Remainder BEN Forecast - Gov. Non-Cashable',
+                  'Unprofiled Remainder BEN Forecast - Economic (inc Private Partner)',
+                  'Unprofiled Remainder BEN Forecast - Disbenefit UK Economic',
+                  'Total BEN Forecast - Gov. Cashable',
+                  'Total BEN Forecast - Gov. Non-Cashable',
+                  'Total BEN Forecast - Economic (inc Private Partner)',
+                  'Total BEN Forecast - Disbenefit UK Economic']
+
+cost_key_list = ['Total Forecast',
+                 'Pre-profile RDEL',
+                 'Pre-profile CDEL',
+                 'Total RDEL Forecast Total',
+                 'Total CDEL Forecast Total WLC',
+                 'Unprofiled RDEL Forecast Total',
+                 'Unprofiled CDEL Forecast Total WLC']
+
+financal_key_list = ['Source of Finance',
+                     'Overall contingency (£m)',
+                     'Is this Continency amount included within the WLC?',
+                     'Overall figure for Optimism Bias (£m)',
+                     'Is this Optimism Bias included within the WLC?',]
