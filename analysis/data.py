@@ -63,7 +63,7 @@ financial_analysis_masters_list = list_of_masters_all[0:9]
 all_project_names = get_all_project_names(list_of_masters_all)
 
 '''dates for functions. python date format is Year, Month, day'''
-ipdc_date = datetime.date(2020, 8, 17)
+ipdc_date = datetime.date(2020, 8, 10)
 
 abbreviations = {'2nd Generation UK Search and Rescue Aviation': 'SARH2',
                  'A12 Chelmsford to A120 widening': 'A12',
@@ -77,7 +77,7 @@ abbreviations = {'2nd Generation UK Search and Rescue Aviation': 'SARH2',
                  'East Coast Digital Programme': 'ECDP',
                  'East Coast Mainline Programme': 'ECMP',
                  'East West Rail Programme (Central Section)': 'EWR (Central)',
-                 'East West Rail Programme (Western Section)': 'EWR (Western',
+                 'East West Rail Programme (Western Section)': 'EWR (Western)',
                  'Future Theory Test Service (FTTS)': 'FTTS',
                  'Great Western Route Modernisation (GWRM) including electrification': 'GWRM',
                  'Heathrow Expansion': 'HEP',
@@ -131,7 +131,7 @@ midland_mainline = 'Midland Main Line Programme'
 midlands_rail_hub = 'Midlands Rail Hub'
 north_of_england = 'North of England Programme'
 northern_powerhouse = 'Northern Powerhouse Rail'
-north_we = 'Midlands Rail Hub'
+nwe = 'North Western Electrification'
 ox_cam_expressway = 'Oxford-Cambridge Expressway'
 rail_franchising = 'Rail Franchising Programme'
 west_coast_partnership = 'West Coast Partnership Franchise'
