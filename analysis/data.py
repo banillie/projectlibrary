@@ -37,8 +37,8 @@ q4_1617 = project_data_from_master(root_path/'core_data/master_4_2016.xlsx', 4, 
 q3_1617 = project_data_from_master(root_path/'core_data/master_3_2016.xlsx', 3, 2016)
 
 """list of dictionaries"""
-one_quarter_master_list = []
-bespoke_group_masters_list = []
+# one_quarter_master_list = []
+# bespoke_group_masters_list = []
 
 list_of_masters_all = [q1_2021,
                        q4_1920,
@@ -57,7 +57,7 @@ list_of_masters_all = [q1_2021,
                        q3_1617]
 
 # financial bls only go back to q1_1819
-financial_analysis_masters_list = list_of_masters_all[0:9]
+# financial_analysis_masters_list = list_of_masters_all[0:9]
 
 '''list of project names. useful to have here and import into programme'''
 all_project_names = get_all_project_names(list_of_masters_all)
@@ -100,7 +100,7 @@ abbreviations = {'2nd Generation UK Search and Rescue Aviation': 'SARH2',
                  'South West Route Capacity': 'SWRC',
                  'Thameslink Programme': 'Thameslink',
                  'Transpennine Route Upgrade (TRU)': 'TRU',
-                 'Western Rail Link to Heathrow': 'WRlTH'}
+                 'Western Rail Link to Heathrow': 'WRLtH'}
 
 '''specific project names. Useful to have them captured here so don't have to keep cutting and pasting string 
 name from excel master'''
@@ -149,11 +149,11 @@ hsmrpg = [hs2_1, hs2_2a, hs2_2b, hexagon, northern_powerhouse, ewr_western, ewr_
 
 '''baselining information'''
 # general baseline information
-baseline_bc_stamp = baseline_information_bc(all_project_names, list_of_masters_all)
-bc_index = baseline_index(baseline_bc_stamp, list_of_masters_all)
-# finance baseline information
-fin_baseline_bcs = baseline_information_bc(all_project_names, financial_analysis_masters_list)
-fin_bc_index = baseline_index(fin_baseline_bcs, list_of_masters_all)
+# baseline_bc_stamp = baseline_information_bc(all_project_names, list_of_masters_all)
+# bc_index = baseline_index(baseline_bc_stamp, list_of_masters_all)
+# # finance baseline information
+# fin_baseline_bcs = baseline_information_bc(all_project_names, financial_analysis_masters_list)
+# fin_bc_index = baseline_index(fin_baseline_bcs, list_of_masters_all)
 
 milestone_bl_stamp = baseline_information(all_project_names, list_of_masters_all,
                                           'Re-baseline IPDC milestones')
@@ -175,36 +175,36 @@ wlc_key = 'Total Forecast'
 
 
 '''Financial information'''
-latest_income_profiles = get_project_income_profile(list_of_masters_all[0].projects, financial_analysis_masters_list,
-                                                    income_list, year_list, fin_bc_index, 0)
-last_income_profiles = get_project_income_profile(list_of_masters_all[0].projects, financial_analysis_masters_list,
-                                                  income_list, year_list, fin_bc_index, 1)
-baseline_1_income_profiles = get_project_income_profile(list_of_masters_all[0].projects, financial_analysis_masters_list,
-                                                      income_list, year_list, fin_bc_index, 2)
-baseline_2_income_profiles = get_project_income_profile(list_of_masters_all[0].projects, financial_analysis_masters_list,
-                                                      income_list, year_list, fin_bc_index, 3)
+latest_income_profiles = get_project_income_profile(list_of_masters_all[0].projects, list_of_masters_all,
+                                                    income_list, year_list, costs_bl_index, 0)
+last_income_profiles = get_project_income_profile(list_of_masters_all[0].projects, list_of_masters_all,
+                                                  income_list, year_list, costs_bl_index, 1)
+baseline_1_income_profiles = get_project_income_profile(list_of_masters_all[0].projects, list_of_masters_all,
+                                                      income_list, year_list, costs_bl_index, 2)
+# baseline_2_income_profiles = get_project_income_profile(list_of_masters_all[0].projects, financial_analysis_masters_list,
+#                                                       income_list, year_list, fin_bc_index, 3)
 
 
-latest_cost_profiles = get_project_cost_profile(list_of_masters_all[0].projects, financial_analysis_masters_list,
-                                                      cost_list, year_list, fin_bc_index, 0)
-last_cost_profiles = get_project_cost_profile(list_of_masters_all[0].projects, financial_analysis_masters_list,
-                                                    cost_list, year_list, fin_bc_index, 1)
-baseline_1_cost_profiles = get_project_cost_profile(list_of_masters_all[0].projects, financial_analysis_masters_list,
-                                                        cost_list, year_list, fin_bc_index, 2)
-baseline_2_cost_profiles = get_project_cost_profile(list_of_masters_all[0].projects, financial_analysis_masters_list,
-                                                        cost_list, year_list, fin_bc_index, 3)
+latest_cost_profiles = get_project_cost_profile(list_of_masters_all[0].projects, list_of_masters_all,
+                                                      cost_list, year_list, costs_bl_index, 0)
+last_cost_profiles = get_project_cost_profile(list_of_masters_all[0].projects, list_of_masters_all,
+                                                    cost_list, year_list, costs_bl_index, 1)
+baseline_1_cost_profiles = get_project_cost_profile(list_of_masters_all[0].projects, list_of_masters_all,
+                                                        cost_list, year_list, costs_bl_index, 2)
+# baseline_2_cost_profiles = get_project_cost_profile(list_of_masters_all[0].projects, list_of_masters_all,
+#                                                         cost_list, year_list, costs_bl_index, 3)
 
 #milestone information
 '''get all milestone data'''
 p_current_milestones = project_all_milestones_dict(list_of_masters_all[0].projects,
                                            list_of_masters_all,
-                                           bc_index, 0)
+                                           milestone_bl_index, 0)
 p_last_milestones = project_all_milestones_dict(list_of_masters_all[0].projects,
                                         list_of_masters_all,
-                                        bc_index, 1)
+                                        milestone_bl_index, 1)
 p_baseline_milestones = project_all_milestones_dict(list_of_masters_all[0].projects,
                                         list_of_masters_all,
-                                        bc_index, 2)
+                                        milestone_bl_index, 2)
 
 '''calculate time current and last quarter'''
 first_diff_data = project_time_difference(p_current_milestones, p_last_milestones)
