@@ -415,7 +415,7 @@ def baseline_information(project_list, masters_list, data_baseline):
         for i, master in enumerate(masters_list):
             if project_name in master.projects:
                 try:
-                    approved_bc = master.data[project_name]['Re-baseline ' + data_baseline]
+                    approved_bc = master.data[project_name][data_baseline]
                     quarter = master.data[project_name]['Reporting period (GMPP - Snapshot Date)']
                     if approved_bc == 'Yes':
                         lower_list.append((approved_bc, quarter, i))

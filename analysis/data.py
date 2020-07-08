@@ -155,8 +155,17 @@ bc_index = baseline_index(baseline_bc_stamp, list_of_masters_all)
 fin_baseline_bcs = baseline_information_bc(all_project_names, financial_analysis_masters_list)
 fin_bc_index = baseline_index(fin_baseline_bcs, list_of_masters_all)
 
-ipdc_milestone_bl_stamp = baseline_information(all_project_names, list_of_masters_all, 'IPDC milestones')
-ipdc_milestone_bl_index = baseline_index(ipdc_milestone_bl_stamp, list_of_masters_all)
+milestone_bl_stamp = baseline_information(all_project_names, list_of_masters_all,
+                                          'Re-baseline IPDC milestones')
+milestone_bl_index = baseline_index(milestone_bl_stamp, list_of_masters_all)
+
+costs_bl_stamp = baseline_information(all_project_names, list_of_masters_all,
+                                          'Re-baseline IPDC cost')
+costs_bl_index = baseline_index(costs_bl_stamp, list_of_masters_all)
+
+benefits_bl_stamp = baseline_information(all_project_names, list_of_masters_all,
+                                          'Re-baseline IPDC benefits')
+benefits_bl_index = baseline_index(benefits_bl_stamp, list_of_masters_all)
 
 '''lists and keys for running programmes'''
 income_list = [' Forecast - Income both Revenue and Capital']
