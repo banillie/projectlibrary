@@ -69,6 +69,8 @@ def project_all_milestones_dict(project_names,
                     pass
         except (KeyError, TypeError):
             pass
+        except IndexError:
+            print('warning ' + 'name' + ' does not have complete baseline index list')
 
         #put the list in chronological order
         sorted_list = sorted(raw_list, key=lambda k: (k[1] is None, k[1]))
