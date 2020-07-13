@@ -73,6 +73,7 @@ abbreviations = {'2nd Generation UK Search and Rescue Aviation': 'SARH2',
                  'A417 Air Balloon': 'A417',
                  'A428 Black Cat to Caxton Gibbet': 'A428',
                  'A66 Northern Trans-Pennine': 'A66',
+                 'Brighton Mainline Upgrade Programme' : 'Brighton Mainline',
                  'Crossrail Programme': 'Crossrail',
                  'East Coast Digital Programme': 'ECDP',
                  'East Coast Mainline Programme': 'ECMP',
@@ -110,6 +111,7 @@ a303 = 'A303 Amesbury to Berwick Down'
 a417 = 'A417 Air Balloon'
 a428 = 'A428 Black Cat to Caxton Gibbet'
 a66 = 'A66 Northern Trans-Pennine'
+bright_ml = 'Brighton Mainline Upgrade Programme'
 cvs = 'Commercial Vehicle Services (CVS)'
 east_coast_digital = 'East Coast Digital Programme'
 east_coast_mainline = 'East Coast Mainline Programme'
