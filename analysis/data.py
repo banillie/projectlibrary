@@ -108,6 +108,7 @@ name from excel master'''
 a12 = 'A12 Chelmsford to A120 widening'
 a14 = 'A14 Cambridge to Huntingdon Improvement Scheme'
 a303 = 'A303 Amesbury to Berwick Down'
+a358 = 'A358 Taunton to Southfields Dualling'
 a417 = 'A417 Air Balloon'
 a428 = 'A428 Black Cat to Caxton Gibbet'
 a66 = 'A66 Northern Trans-Pennine'
@@ -389,4 +390,16 @@ financal_key_list = ['Source of Finance',
                      'Overall contingency (£m)',
                      'Is this Continency amount included within the WLC?',
                      'Overall figure for Optimism Bias (£m)',
-                     'Is this Optimism Bias included within the WLC?',]
+                     'Is this Optimism Bias included within the WLC?']
+
+baselining_keys = ['IPDC approval point',
+                   'Re-baseline this quarter',
+                   'Re-baseline ALB/Programme milestones',
+                   'Re-baseline ALB/Programme cost',
+                   'Re-baseline ALB/Programme benefits',
+                   'Re-baseline IPDC milestones',
+                   'Re-baseline IPDC cost',
+                   'Re-baseline IPDC benefits',
+                   'Re-baseline HMT milestones',
+                   'Re-baseline HMT cost',
+                   'Re-baseline HMT benefits']
