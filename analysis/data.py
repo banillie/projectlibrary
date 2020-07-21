@@ -100,7 +100,7 @@ abbreviations = {'2nd Generation UK Search and Rescue Aviation': 'SARH2',
                  'Rail Franchising Programme': 'Rail Franchising',
                  'South West Route Capacity': 'SWRC',
                  'Thameslink Programme': 'Thameslink',
-                 'Transpennine Route Upgrade (TRU)': 'TRU',
+                 'Transpennine Route Upgrade': 'TRU',
                  'Western Rail Link to Heathrow': 'WRLtH'}
 
 '''specific project names. Useful to have them captured here so don't have to keep cutting and pasting string 
@@ -144,7 +144,7 @@ iep = 'Intercity Express Programme'
 sarh2 = '2nd Generation UK Search and Rescue Aviation'
 south_west_route_capacity = 'South West Route Capacity'
 thameslink = 'Thameslink Programme'
-tru = 'Transpennine Route Upgrade (TRU)'
+tru = 'Transpennine Route Upgrade'
 wrlth = 'Western Rail Link to Heathrow'
 
 '''project groups'''
@@ -173,7 +173,7 @@ benefits_bl_index = baseline_index(benefits_bl_stamp, list_of_masters_all)
 '''lists and keys for running programmes'''
 income_list = [' Forecast - Income both Revenue and Capital']
 cost_list = [' RDEL Forecast Total', ' CDEL Forecast Total', ' Forecast Non-Gov']
-year_list = ['19-20', '20-21', '21-22', '22-23', '23-24', '24-25', '25-26', '26-27', '27-28', '28-29', 'Unprofiled']
+year_list = ['20-21', '21-22', '22-23', '23-24', '24-25', '25-26', '26-27', '27-28', '28-29', 'Unprofiled']
 wlc_key = 'Total Forecast'
 
 
