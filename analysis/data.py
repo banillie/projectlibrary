@@ -151,9 +151,9 @@ wrlth = 'Western Rail Link to Heathrow'
 hsmrpg = [hs2_1, hs2_2a, hs2_2b, hexagon, northern_powerhouse, ewr_western, ewr_central]
 
 '''baselining information'''
-# general baseline information
-# baseline_bc_stamp = baseline_information_bc(all_project_names, list_of_masters_all)
-# bc_index = baseline_index(baseline_bc_stamp, list_of_masters_all)
+#business case approval baseline. Used for overall DCA rating
+baseline_bc_stamp = baseline_information_bc(all_project_names, list_of_masters_all)
+bc_index = baseline_index(baseline_bc_stamp, list_of_masters_all)
 # # finance baseline information
 # fin_baseline_bcs = baseline_information_bc(all_project_names, financial_analysis_masters_list)
 # fin_bc_index = baseline_index(fin_baseline_bcs, list_of_masters_all)
