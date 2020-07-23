@@ -150,6 +150,8 @@ wrlth = 'Western Rail Link to Heathrow'
 '''project groups'''
 hsmrpg = [hs2_1, hs2_2a, hs2_2b, hexagon, northern_powerhouse, ewr_western, ewr_central]
 
+obc_fbc = []
+
 '''baselining information'''
 #business case approval baseline. Used for overall DCA rating
 baseline_bc_stamp = baseline_information_bc(all_project_names, list_of_masters_all)
@@ -173,7 +175,7 @@ benefits_bl_index = baseline_index(benefits_bl_stamp, list_of_masters_all)
 '''lists and keys for running programmes'''
 income_list = [' Forecast - Income both Revenue and Capital']
 cost_list = [' RDEL Forecast Total', ' CDEL Forecast Total', ' Forecast Non-Gov']
-year_list = ['20-21', '21-22', '22-23', '23-24', '24-25', '25-26', '26-27', '27-28', '28-29', 'Unprofiled']
+year_list = ['19-20', '20-21', '21-22', '22-23', '23-24', '24-25', '25-26', '26-27', '27-28', '28-29', 'Unprofiled']
 wlc_key = 'Total Forecast'
 
 
@@ -308,6 +310,7 @@ vfm = ['IPDC approval point',
                  'VfM Category single entry',
                  'VfM Category lower range',
                  'VfM Category upper range',
+                'VfM Category single entry',
                  'Present Value Cost (PVC)',
                  'Present Value Benefit (PVB)',
                  'Initial Benefits Cost Ratio (BCR)',
