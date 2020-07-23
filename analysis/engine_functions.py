@@ -198,7 +198,7 @@ def get_quarter_stamp(masters_list):
 
     return output_list
 
-def concatenate_dates(date):
+def concatenate_dates(date, bicc_date):
     '''
     function for converting dates into concatenated written time periods
     :param date: datetime.date
