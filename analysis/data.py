@@ -210,6 +210,9 @@ p_last_milestones = project_all_milestones_dict(list_of_masters_all[0].projects,
 p_baseline_milestones = project_all_milestones_dict(list_of_masters_all[0].projects,
                                         list_of_masters_all,
                                         milestone_bl_index, 2)
+p_baseline_milestones_two = project_all_milestones_dict(list_of_masters_all[0].projects,
+                                        list_of_masters_all,
+                                        milestone_bl_index, 3)
 
 '''calculate time current and last quarter'''
 first_diff_data = project_time_difference(p_current_milestones, p_last_milestones)
