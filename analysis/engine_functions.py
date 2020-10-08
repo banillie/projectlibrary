@@ -8,7 +8,7 @@ NOTE. Python date format is (YYYY,MM,DD)
 '''
 
 import random
-import datetime
+from datetime import datetime
 from collections import Counter
 from openpyxl.styles import Font, PatternFill
 from openpyxl.styles.differential import DifferentialStyle
