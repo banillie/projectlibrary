@@ -82,8 +82,8 @@ def project_all_milestones_dict(project_names,
                 except KeyError:
                     pass
 
-        # except (KeyError, TypeError):
-        #     pass
+        except (KeyError, TypeError):
+            pass
 
         except IndexError:
             print('warning ' + name + ' does not have complete baseline index list')
