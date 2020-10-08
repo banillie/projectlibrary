@@ -20,7 +20,6 @@ def project_all_milestones_dict(project_names,
                                 master_data,
                                 baseline_index,
                                 data_to_return=int):
-
     '''
     Function that puts project milestone data in dictionary in order of newest date first.
 
@@ -40,39 +39,56 @@ def project_all_milestones_dict(project_names,
             p_data = master_data[baseline_index[name][data_to_return]].data[name]
             for i in range(1, 50):
                 try:
+                    m_date = p_data['Approval MM' + str(i) + ' Forecast / Actual']
+                    if type(m_date) == str:
+                        m_date = datetime.strptime(m_date, "%d/%m/%Y").date()
+                    t = (p_data['Approval MM' + str(i)],
+                         m_date,
+                         p_data['Approval MM' + str(i) + ' Notes'])
+                    raw_list.append(t)
+                except KeyError:
                     try:
+                        m_date = p_data['Approval MM' + str(i) + ' Forecast - Actual']
+                        if type(m_date) == str:
+                            m_date = datetime.strptime(m_date, "%d/%m/%Y").date()
                         t = (p_data['Approval MM' + str(i)],
-                             p_data['Approval MM' + str(i) + ' Forecast / Actual'],
+                             m_date,
                              p_data['Approval MM' + str(i) + ' Notes'])
                         raw_list.append(t)
                     except KeyError:
-                        t = (p_data['Approval MM' + str(i)],
-                             p_data['Approval MM' + str(i) + ' Forecast - Actual'],
-                             p_data['Approval MM' + str(i) + ' Notes'])
-                        raw_list.append(t)
+                        pass
 
+            for i in range(1, 50):
+                try:
+                    m_date = p_data['Assurance MM' + str(i) + ' Forecast - Actual']
+                    if type(m_date) == str:
+                        m_date = datetime.strptime(m_date, "%d/%m/%Y").date()
                     t = (p_data['Assurance MM' + str(i)],
-                         p_data['Assurance MM' + str(i) + ' Forecast - Actual'],
+                         m_date,
                          p_data['Assurance MM' + str(i) + ' Notes'])
                     raw_list.append(t)
-
                 except KeyError:
                     pass
 
             for i in range(18, 67):
                 try:
+                    m_date = p_data['Project MM' + str(i) + ' Forecast - Actual']
+                    if type(m_date) == str:
+                        m_date = datetime.strptime(m_date, "%d/%m/%Y").date()
                     t = (p_data['Project MM' + str(i)],
-                         p_data['Project MM' + str(i) + ' Forecast - Actual'],
+                         m_date,
                          p_data['Project MM' + str(i) + ' Notes'])
                     raw_list.append(t)
                 except KeyError:
                     pass
-        except (KeyError, TypeError):
-            pass
+
+        # except (KeyError, TypeError):
+        #     pass
+
         except IndexError:
             print('warning ' + name + ' does not have complete baseline index list')
 
-        #put the list in chronological order
+        # put the list in chronological order
         sorted_list = sorted(raw_list, key=lambda k: (k[1] is None, k[1]))
 
         # loop to stop key names being the same. Not ideal as doesn't handle keys that may already have numbers as
@@ -95,6 +111,7 @@ def project_all_milestones_dict(project_names,
         upper_dict[name] = lower_dict
 
     return upper_dict
+
 
 def project_time_difference(proj_m_data_1, proj_m_data_2):
     """Function that calculates time different between milestone dates"""
