@@ -44,7 +44,7 @@ def project_all_milestones_dict(project_names,
                         try:
                             m_date = datetime.strptime(m_date, "%d/%m/%Y").date()
                         except ValueError:  # handles straight text e.g. tbc
-                            m_date = ''
+                            pass
                     t = (p_data['Approval MM' + str(i)],
                          m_date,
                          p_data['Approval MM' + str(i) + ' Notes'])
@@ -56,7 +56,7 @@ def project_all_milestones_dict(project_names,
                             try:
                                 m_date = datetime.strptime(m_date, "%d/%m/%Y").date()
                             except ValueError:
-                                m_date = ''
+                                pass
                         t = (p_data['Approval MM' + str(i)],
                              m_date,
                              p_data['Approval MM' + str(i) + ' Notes'])
@@ -71,7 +71,7 @@ def project_all_milestones_dict(project_names,
                         try:
                             m_date = datetime.strptime(m_date, "%d/%m/%Y").date()
                         except ValueError:
-                            m_date = ''
+                            pass
                     t = (p_data['Assurance MM' + str(i)],
                          m_date,
                          p_data['Assurance MM' + str(i) + ' Notes'])
@@ -85,8 +85,8 @@ def project_all_milestones_dict(project_names,
                     if type(m_date) == str:
                         try:
                             m_date = datetime.strptime(m_date, "%d/%m/%Y").date()
-                        except:
-                            m_date = ''
+                        except ValueError:
+                            pass
                     t = (p_data['Project MM' + str(i)],
                          m_date,
                          p_data['Project MM' + str(i) + ' Notes'])
@@ -100,6 +100,7 @@ def project_all_milestones_dict(project_names,
         except IndexError:
             print('warning ' + name + ' does not have complete baseline index list')
 
+        print(raw_list)
         # put the list in chronological order
         sorted_list = sorted(raw_list, key=lambda k: (k[1] is None, k[1]))
 
