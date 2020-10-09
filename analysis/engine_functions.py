@@ -435,7 +435,7 @@ def baseline_information(project_list, masters_list, data_baseline):
             if project_name in master.projects:
                 try:
                     approved_bc = master.data[project_name][data_baseline]
-                    quarter = master.data[project_name]['Reporting period (GMPP - Snapshot Date)']
+                    quarter = str(master.quarter)
                     if approved_bc == 'Yes':
                         lower_list.append((approved_bc, quarter, i))
                 except KeyError:
