@@ -41,7 +41,10 @@ def project_all_milestones_dict(project_names,
                 try:
                     m_date = p_data['Approval MM' + str(i) + ' Forecast / Actual']
                     if type(m_date) == str:
-                        m_date = datetime.strptime(m_date, "%d/%m/%Y").date()
+                        try:
+                            m_date = datetime.strptime(m_date, "%d/%m/%Y").date()
+                        except ValueError:  # handles straight text e.g. tbc
+                            m_date = ''
                     t = (p_data['Approval MM' + str(i)],
                          m_date,
                          p_data['Approval MM' + str(i) + ' Notes'])
@@ -50,7 +53,10 @@ def project_all_milestones_dict(project_names,
                     try:
                         m_date = p_data['Approval MM' + str(i) + ' Forecast - Actual']
                         if type(m_date) == str:
-                            m_date = datetime.strptime(m_date, "%d/%m/%Y").date()
+                            try:
+                                m_date = datetime.strptime(m_date, "%d/%m/%Y").date()
+                            except ValueError:
+                                m_date = ''
                         t = (p_data['Approval MM' + str(i)],
                              m_date,
                              p_data['Approval MM' + str(i) + ' Notes'])
@@ -62,7 +68,10 @@ def project_all_milestones_dict(project_names,
                 try:
                     m_date = p_data['Assurance MM' + str(i) + ' Forecast - Actual']
                     if type(m_date) == str:
-                        m_date = datetime.strptime(m_date, "%d/%m/%Y").date()
+                        try:
+                            m_date = datetime.strptime(m_date, "%d/%m/%Y").date()
+                        except ValueError:
+                            m_date = ''
                     t = (p_data['Assurance MM' + str(i)],
                          m_date,
                          p_data['Assurance MM' + str(i) + ' Notes'])
@@ -74,7 +83,10 @@ def project_all_milestones_dict(project_names,
                 try:
                     m_date = p_data['Project MM' + str(i) + ' Forecast - Actual']
                     if type(m_date) == str:
-                        m_date = datetime.strptime(m_date, "%d/%m/%Y").date()
+                        try:
+                            m_date = datetime.strptime(m_date, "%d/%m/%Y").date()
+                        except:
+                            m_date = ''
                     t = (p_data['Project MM' + str(i)],
                          m_date,
                          p_data['Project MM' + str(i) + ' Notes'])
@@ -82,7 +94,7 @@ def project_all_milestones_dict(project_names,
                 except KeyError:
                     pass
 
-        except (KeyError, TypeError):
+        except (KeyError, TypeError):  # further testing required to understand this exception handling.
             pass
 
         except IndexError:
