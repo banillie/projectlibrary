@@ -82,7 +82,7 @@ def project_all_milestones_dict(project_names,
                 except KeyError:
                     pass
 
-        except (KeyError, TypeError, ValueError):  # further testing required to understand this exception handling.
+        except (KeyError, TypeError):  # further testing required to understand this exception handling.
             pass
 
         except IndexError:
