@@ -45,7 +45,6 @@ def project_all_milestones_dict(project_names,
                             m_date = datetime.strptime(m_date, "%d/%m/%Y").date()
                         except ValueError:
                             print(str(name) + ' ' + 'Approval MM' + str(i))
-                            pass
                     t = (p_data['Approval MM' + str(i)],
                          m_date,
                          p_data['Approval MM' + str(i) + ' Notes'])
@@ -54,7 +53,10 @@ def project_all_milestones_dict(project_names,
                     try:
                         m_date = p_data['Approval MM' + str(i) + ' Forecast - Actual']
                         if type(m_date) == str:
-                            m_date = datetime.strptime(m_date, "%d/%m/%Y").date()
+                            try:
+                                m_date = datetime.strptime(m_date, "%d/%m/%Y").date()
+                            except ValueError:
+                                print(str(name) + ' ' + 'Approval MM' + str(i))
                         t = (p_data['Approval MM' + str(i)],
                              m_date,
                              p_data['Approval MM' + str(i) + ' Notes'])
@@ -66,7 +68,10 @@ def project_all_milestones_dict(project_names,
                 try:
                     m_date = p_data['Assurance MM' + str(i) + ' Forecast - Actual']
                     if type(m_date) == str:
-                        m_date = datetime.strptime(m_date, "%d/%m/%Y").date()
+                        try:
+                            m_date = datetime.strptime(m_date, "%d/%m/%Y").date()
+                        except ValueError:
+                            print(str(name) + ' ' + 'Assurance MM' + str(i))
                     t = (p_data['Assurance MM' + str(i)],
                          m_date,
                          p_data['Assurance MM' + str(i) + ' Notes'])
@@ -78,7 +83,10 @@ def project_all_milestones_dict(project_names,
                 try:
                     m_date = p_data['Project MM' + str(i) + ' Forecast - Actual']
                     if type(m_date) == str:
-                        m_date = datetime.strptime(m_date, "%d/%m/%Y").date()
+                        try:
+                            m_date = datetime.strptime(m_date, "%d/%m/%Y").date()
+                        except ValueError:
+                            print(str(name) + ' ' + 'Project MM' + str(i))
                     t = (p_data['Project MM' + str(i)],
                          m_date,
                          p_data['Project MM' + str(i) + ' Notes'])
