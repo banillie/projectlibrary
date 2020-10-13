@@ -1044,13 +1044,13 @@ def ap_p_milestone_data_bulk(project_list, master_data):
                     try:
                         date = p_data['Approval MM' + str(i) + ' Forecast / Actual']
                         if type(date) == str:
-                            date = datetime.strptime(m_date, "%d/%m/%Y").date()
+                            date = datetime.strptime(date, "%d/%m/%Y").date()
                         lower_dictionary[p_data['Approval MM' + str(i)]] = \
                             {date: p_data['Approval MM' + str(i) + ' Notes']}
                     except KeyError:
                         date = p_data['Approval MM' + str(i) + ' Forecast - Actual']
                         if type(date) == str:
-                            date = datetime.strptime(m_date, "%d/%m/%Y").date()
+                            date = datetime.strptime(date, "%d/%m/%Y").date()
                         lower_dictionary[p_data['Approval MM' + str(i)]] = \
                             {date: p_data['Approval MM' + str(i) + ' Notes']}
 
@@ -1061,7 +1061,7 @@ def ap_p_milestone_data_bulk(project_list, master_data):
                 try:
                     date = p_data['Project MM' + str(i) + ' Forecast - Actual']
                     if type(date) == str:
-                        date = datetime.strptime(m_date, "%d/%m/%Y").date()
+                        date = datetime.strptime(date, "%d/%m/%Y").date()
                     lower_dictionary[p_data['Project MM' + str(i)]] = \
                         {date: p_data['Project MM' + str(i) + ' Notes']}
                 except KeyError:
