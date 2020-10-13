@@ -1042,19 +1042,28 @@ def ap_p_milestone_data_bulk(project_list, master_data):
             for i in range(1, 50):
                 try:
                     try:
+                        date = p_data['Approval MM' + str(i) + ' Forecast / Actual']
+                        if type(date) == str:
+                            date = datetime.strptime(m_date, "%d/%m/%Y").date()
                         lower_dictionary[p_data['Approval MM' + str(i)]] = \
-                            {p_data['Approval MM' + str(i) + ' Forecast / Actual'] : p_data['Approval MM' + str(i) + ' Notes']}
+                            {date: p_data['Approval MM' + str(i) + ' Notes']}
                     except KeyError:
+                        date = p_data['Approval MM' + str(i) + ' Forecast - Actual']
+                        if type(date) == str:
+                            date = datetime.strptime(m_date, "%d/%m/%Y").date()
                         lower_dictionary[p_data['Approval MM' + str(i)]] = \
-                            {p_data['Approval MM' + str(i) + ' Forecast - Actual'] : p_data['Approval MM' + str(i) + ' Notes']}
+                            {date: p_data['Approval MM' + str(i) + ' Notes']}
 
                 except KeyError:
                     pass
 
             for i in range(18, 67):
                 try:
+                    date = p_data['Project MM' + str(i) + ' Forecast - Actual']
+                    if type(date) == str:
+                        date = datetime.strptime(m_date, "%d/%m/%Y").date()
                     lower_dictionary[p_data['Project MM' + str(i)]] = \
-                        {p_data['Project MM' + str(i) + ' Forecast - Actual'] : p_data['Project MM' + str(i) + ' Notes']}
+                        {date: p_data['Project MM' + str(i) + ' Notes']}
                 except KeyError:
                     pass
         except KeyError:
